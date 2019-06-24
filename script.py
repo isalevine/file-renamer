@@ -85,6 +85,15 @@ def print_menu():
         if user_input[0] == "/":
             currentDirectory = currentDirectory / user_input[1:]
             print_current_directory()
+
+        if user_input == "./":
+            array = str(currentDirectory).split('/')
+            print("Current array is: ")
+            # print(array)
+            del array[-1]
+            print(array)
+            currentDirectory = "".join(array)
+            print(currentDirectory)
         
         input("")
 
