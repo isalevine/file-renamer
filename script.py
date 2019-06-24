@@ -95,6 +95,10 @@ def print_menu():
             currentDirectory = "".join(array)
             print(currentDirectory)
         
+        # necessary to reset str() of path into a Posix.path object??
+        if type(currentDirectory) == str:
+            currentDirectory = pathlib.Path("./" + currentDirectory)
+        
         input("")
 
 
