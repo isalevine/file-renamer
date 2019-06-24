@@ -54,6 +54,8 @@ currentDirectory = pathlib.Path(path)
 
 
 def print_menu():
+    global currentDirectory
+
     menu_text = """
     Hello, and welcome to Filename Reader!
     
@@ -75,7 +77,16 @@ def print_menu():
 
         if user_input == "dir":
             print_current_directory()
-            input("")
+
+        if user_input == "ls":
+            for filename in currentDirectory.iterdir():
+                print(filename)
+
+        if user_input[0] == "/":
+            currentDirectory = currentDirectory / user_input[1:]
+            print_current_directory()
+        
+        input("")
 
 
 def print_current_directory():
