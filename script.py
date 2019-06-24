@@ -8,28 +8,25 @@
 
 
 
-# per: https://stackabuse.com/python-list-files-in-a-directory/
-import pathlib
-
 # GOAL: create CLI to navigate & select directory,
 # set Regex/string-matching for filenames, and
 # replace (look for GSUB equivalent?) with specified text
-path = './drum-samples'
 
-currentDirectory = pathlib.Path(path)
 
-currentDirectory = currentDirectory / "SDS800 Kits"
+# currentDirectory = currentDirectory / "SDS800 Kits"
 
-for filename in currentDirectory.iterdir():
-    print (filename)
+# for filename in currentDirectory.iterdir():
+#     print (filename)
 
-input = input("Enter directory name: ")
-print("Directory name chosen: " + input)
+# input = input("Enter directory name: ")
+# print("Directory name chosen: " + input)
 
-# print(type(currentDirectory))
+# # print(type(currentDirectory))
 
-if (currentDirectory / input).exists():
-    print("true!!")
+# if (currentDirectory / input).exists():
+#     print("true!!")
+
+
 
 
 # IDEA for CLI TO NAVIGATE DIRECTORY:
@@ -43,3 +40,44 @@ if (currentDirectory / input).exists():
 #    $ replace "Snare " with ""
 #    and take the first "" and second "" as parameters
 #    for calling change_filenames(list, string1, string2)
+
+
+
+
+# per: https://stackabuse.com/python-list-files-in-a-directory/
+import pathlib
+
+path = './drum-samples'
+
+currentDirectory = pathlib.Path(path)
+
+
+
+def print_menu():
+    menu_text = """
+    Hello, and welcome to Filename Reader!
+    
+    This handy CLI is designed for mass-renaming
+    of drum sample filenames, specifically from
+    Samples From Mars downloads.
+
+    ~~~
+
+    """
+    
+    print_current_directory()
+    print(menu_text)
+    input = get_user_input()
+    # print("User input is: " + input)
+
+
+def print_current_directory():
+    print("Current directory is: " + str(currentDirectory))
+
+
+def get_user_input():
+    return input("Enter command: ")
+
+
+
+print_menu()
