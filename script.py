@@ -65,10 +65,17 @@ def print_menu():
 
     """
     
-    print_current_directory()
+    # print_current_directory()
     print(menu_text)
-    input = get_user_input()
-    # print("User input is: " + input)
+    user_input = ""
+
+    while user_input != "quit":
+        user_input = get_user_input()
+        # print("User input is: " + input)
+
+        if user_input == "dir":
+            print_current_directory()
+            input("")
 
 
 def print_current_directory():
