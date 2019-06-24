@@ -1,4 +1,6 @@
-with open('test-file.txt', 'r') as text:
-    contents = text.read() + " isa"
+with open('test-file.txt', 'a') as text:
+    text.write(", isa")
 
-    print(contents)
+
+with open('test-file.txt', 'r') as text:
+    print(text.read())
