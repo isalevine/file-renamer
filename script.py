@@ -87,6 +87,11 @@ def print_menu():
         # rn = rename ... anything better to use??
         if user_input[0:2] == "rn":
             print("Rename detected!")
+            array = user_input.split(" ")
+            if array[1] and array[2]:
+                src = array[1]
+                dst = array[2]
+                os.rename(src, dst)
 
         # change the following to cd commands => call a separate
         # cd() function that parses and changes currentDirectory?
