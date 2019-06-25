@@ -46,6 +46,8 @@
 
 # per: https://stackabuse.com/python-list-files-in-a-directory/
 import pathlib
+# per: https://stackoverflow.com/questions/54152653/renaming-file-extension-using-pathlib-python-3
+import os
 
 path = './drum-samples'
 
@@ -82,6 +84,12 @@ def print_menu():
             for filename in currentDirectory.iterdir():
                 print(filename)
 
+        # rn = rename ... anything better to use??
+        if user_input[0:2] == "rn":
+            print("Rename detected!")
+
+        # change the following to cd commands => call a separate
+        # cd() function that parses and changes currentDirectory?
         if user_input[0] == "/":
             currentDirectory = currentDirectory / user_input[1:]
             print_current_directory()
@@ -99,7 +107,7 @@ def print_menu():
         if type(currentDirectory) == str:
             currentDirectory = pathlib.Path("./" + currentDirectory)
         
-        input("")
+        # input("")
 
 
 def print_current_directory():
