@@ -101,6 +101,9 @@ def print_menu():
                     os.rename(src, dst)
             print("Rename detected!")
 
+        # NOTE: worth changing the directory functions to "cd"?
+        # => was confusing after stepping away to NOT input cd...
+        #
         # change the following to cd commands => call a separate
         # cd() function that parses and changes currentDirectory?
         if user_input[0] == "/":
