@@ -101,23 +101,24 @@ def print_menu():
                     os.rename(src, dst)
             print("Rename detected!")
 
-        # NOTE: worth changing the directory functions to "cd"?
-        # => was confusing after stepping away to NOT input cd...
-        #
+
         # change the following to cd commands => call a separate
         # cd() function that parses and changes currentDirectory?
-        if user_input[0] == "/":
-            currentDirectory = currentDirectory / user_input[1:]
-            print_current_directory()
+        if user_input[0:2] == "cd":
+        
+            if user_input[3:5] == "..":
+                array = str(currentDirectory).split('/')
+                print("Current array is: ")
+                # print(array)
+                del array[-1]
+                print(array)
+                currentDirectory = "".join(array)
+                print(currentDirectory)
 
-        if user_input == "./":
-            array = str(currentDirectory).split('/')
-            print("Current array is: ")
-            # print(array)
-            del array[-1]
-            print(array)
-            currentDirectory = "".join(array)
-            print(currentDirectory)
+            else:
+                currentDirectory = currentDirectory / user_input[3:]
+                print_current_directory()
+        # IMPORTANT TO BUILD IN A CHECK FOR A VALID DIRECTORY!!
         
         # necessary to reset str() of path into a Posix.path object??
         if type(currentDirectory) == str:
