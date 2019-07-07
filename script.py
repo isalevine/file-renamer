@@ -107,8 +107,10 @@ def print_menu():
                 for filename in currentDirectory.iterdir():
                     if array[2] in str(filename):
                         print(filename)
+                        rename_partial_filename(filename, array[2], array[3])
                         # next: split filename string, do replacement,
                         # re-concatenate, and call os.rename(str, dst)
+
             else:  
                 # refactor as renaming_function(array[1], array[2]) 
                 if array[1] and array[2]:
@@ -161,6 +163,11 @@ def rename_whole_filename(filename1, filename2):
     dst = filename2
     os.rename(src, dst)
 
+
+def rename_partial_filename(filename, input, output):
+        src = str(filename)
+        dst = src.replace(input, output)
+        os.rename(src, dst)
 
 
 print_menu()
