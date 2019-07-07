@@ -87,6 +87,10 @@ def print_menu():
         # rn = rename ... anything better to use??
         if user_input[0:2] == "rn":
             array = user_input.split(" ")
+
+            if array[1] == "\\all":
+                array[1] = "all"
+
             if array[1] == "all":
                 if (not array[2]) or (not array[3]):
                     print("Rename error!")
@@ -108,9 +112,10 @@ def print_menu():
             else:  
                 # refactor as renaming_function(array[1], array[2]) 
                 if array[1] and array[2]:
-                    src = array[1]
-                    dst = array[2]
-                    os.rename(src, dst)
+                    rename_whole_filename(array[1], array[2])
+                    # src = array[1]
+                    # dst = array[2]
+                    # os.rename(src, dst)
             print("Rename detected!")
 
 
@@ -149,6 +154,12 @@ def print_current_directory():
 
 def get_user_input():
     return input("Enter command: ")
+
+
+def rename_whole_filename(filename1, filename2):
+    src = filename1
+    dst = filename2
+    os.rename(src, dst)
 
 
 
