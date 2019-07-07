@@ -88,6 +88,11 @@ def print_menu():
         if user_input[0:2] == "rn":
             array = user_input.split(" ")
             if array[1] == "all":
+                # may need to detect empty strings to do beginning inserts?
+                if not array[2]:
+                    array[2] = ""
+                if not array[3]:
+                    array[3] = ""
                 if array[2] and array[3]:
                     for filename in currentDirectory.iterdir():
                         if array[2] in str(filename):
