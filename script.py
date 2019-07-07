@@ -104,12 +104,25 @@ def print_menu():
                     # use this to count a number of possible blank spaces?
                     array[3] = " "
 
+                matching_files = []
                 for filename in currentDirectory.iterdir():
                     if array[2] in str(filename):
-                        print(filename)
+                        matching_files << filename
+
+                final_check = False
+                print("You are going to replace: " + array[2] + " => " + array[3])
+                print("This will affect the following files: ")
+                for filename in matching_files:
+                    print(filename)
+                print("Do you want to proceed? (Y/n)")
+                final_input = get_user_input()
+
+                if (final_input == "Y") or (final_input == "y") or (final_input == "Yes") or (final_input == "yes"):
+                    for filename in matching_files:
                         rename_partial_filename(filename, array[2], array[3])
-                        # next: split filename string, do replacement,
-                        # re-concatenate, and call os.rename(str, dst)
+                else:
+                    print("Rename aborted!")
+                    continue
 
             else:  
                 # refactor as renaming_function(array[1], array[2]) 
@@ -165,9 +178,9 @@ def rename_whole_filename(filename1, filename2):
 
 
 def rename_partial_filename(filename, input, output):
-        src = str(filename)
-        dst = src.replace(input, output)
-        os.rename(src, dst)
+    src = str(filename)
+    dst = src.replace(input, output)
+    os.rename(src, dst)
 
 
 print_menu()
