@@ -116,9 +116,11 @@ def print_menu():
                 final_check = get_user_input()
 
                 if (final_check == "Y") or (final_check == "y") or (final_check == "Yes") or (final_check == "yes"):
+                    print("Files changed:")
                     for filename in currentDirectory.iterdir():
                         if array[2] in str(filename):
-                            rename_partial_filename(filename, array[2], array[3])
+                            dst = rename_partial_filename(filename, array[2], array[3])
+                            print(dst)
                 else:
                     print("Rename aborted!")
                     continue
@@ -180,6 +182,7 @@ def rename_partial_filename(filename, input, output):
     src = str(filename)
     dst = src.replace(input, output)
     os.rename(src, dst)
+    return dst
 
 
 print_menu()
