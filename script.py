@@ -88,18 +88,25 @@ def print_menu():
         if user_input[0:2] == "rn":
             array = user_input.split(" ")
             if array[1] == "all":
+                if (not array[2]) or (not array[3]):
+                    print("Rename error!")
+                    continue
+
                 # may need to detect empty strings to do beginning inserts?
-                if not array[2]:
+                # ALSO: may want to ask to confirm empty string inserts?
+                if array[2] == '\\':
                     array[2] = ""
-                if not array[3]:
-                    array[3] = ""
-                if array[2] and array[3]:
-                    for filename in currentDirectory.iterdir():
-                        if array[2] in str(filename):
-                            print(filename)
-                            # next: split filename string, do replacement,
-                            # re-concatenate, and call os.rename(str, dst)
-            else:   
+                if array[3] == '\\':
+                    # use this to count a number of possible blank spaces?
+                    array[3] = " "
+
+                for filename in currentDirectory.iterdir():
+                    if array[2] in str(filename):
+                        print(filename)
+                        # next: split filename string, do replacement,
+                        # re-concatenate, and call os.rename(str, dst)
+            else:  
+                # refactor as renaming_function(array[1], array[2]) 
                 if array[1] and array[2]:
                     src = array[1]
                     dst = array[2]
