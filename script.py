@@ -104,22 +104,21 @@ def print_menu():
                     # use this to count a number of possible blank spaces?
                     array[3] = " "
 
-                matching_files = []
-                for filename in currentDirectory.iterdir():
-                    if array[2] in str(filename):
-                        matching_files << filename
 
-                final_check = False
+                # MUST be a way to only iterate through currentDirectory once!!
+                # => think about it then refactor...! (type: PosixPath)
                 print("You are going to replace: " + array[2] + " => " + array[3])
                 print("This will affect the following files: ")
-                for filename in matching_files:
-                    print(filename)
+                for filename in currentDirectory.iterdir():
+                    if array[2] in str(filename):
+                        print(filename)
                 print("Do you want to proceed? (Y/n)")
-                final_input = get_user_input()
+                final_check = get_user_input()
 
-                if (final_input == "Y") or (final_input == "y") or (final_input == "Yes") or (final_input == "yes"):
-                    for filename in matching_files:
-                        rename_partial_filename(filename, array[2], array[3])
+                if (final_check == "Y") or (final_check == "y") or (final_check == "Yes") or (final_check == "yes"):
+                    for filename in currentDirectory.iterdir():
+                        if array[2] in str(filename):
+                            rename_partial_filename(filename, array[2], array[3])
                 else:
                     print("Rename aborted!")
                     continue
