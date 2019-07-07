@@ -105,6 +105,7 @@ def print_menu():
         # change the following to cd commands => call a separate
         # cd() function that parses and changes currentDirectory?
         if user_input[0:2] == "cd":
+            tempDirectory = currentDirectory
         
             if user_input[3:5] == "..":
                 array = str(currentDirectory).split('/')
@@ -118,11 +119,14 @@ def print_menu():
             else:
                 currentDirectory = currentDirectory / user_input[3:]
                 print_current_directory()
-        # IMPORTANT TO BUILD IN A CHECK FOR A VALID DIRECTORY!!
         
         # necessary to reset str() of path into a Posix.path object??
         if type(currentDirectory) == str:
             currentDirectory = pathlib.Path("./" + currentDirectory)
+
+        if not os.path.isdir(currentDirectory):
+            print("Not a valid directory!")
+            currentDirectory = tempDirectory
         
         # input("")
 
