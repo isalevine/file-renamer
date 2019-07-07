@@ -73,7 +73,8 @@ def print_menu():
     print(menu_text)
     user_input = ""
 
-    while user_input != "quit":
+    # more efficient way to iterate through checks for q/quit, y/yes, etc?
+    while (user_input != "quit") and (user_input != "q"):
         user_input = get_user_input()
         # print("User input is: " + input)
 
