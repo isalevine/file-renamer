@@ -1,13 +1,15 @@
 # File Renamer
-A Python CLI for mass-renaming drum sample filenames.
+A Python CLI for renaming single and multiple files. Designed to format sample filenames for drum machines, but you can use it for whatever kind of files you want! :)
 
 **NOTE: Default directory is currently set to a _.gitignore_-ed folder of drum samples. Make sure to update this in order to avoid errors! _(As of 7-7-2019, see line 52.)_**
 
 
 ## Use
-Once open, use ```cd``` commands to navigate to the files you want to rename. File Renamer can target individual files, or can do (currently) basic string matching to change multiple filenames in the same directory.
+Open by running ```python3 script.py``` in the main directory.
 
-Example:
+Use ```cd``` commands to navigate to the files you want to rename. File Renamer can target individual files, or can do (currently) basic string matching to change multiple filenames in the same directory.
+
+**Example:**
 
 ```
 INPUT:
@@ -67,7 +69,7 @@ q / quit
 ```
 
 ## Notes
-Upcoming plans:
+**Upcoming plans:**
 * Add in a way to target single or multiple matches in filename *(i.e. only first "Snare" in "Snare 808 Filter Snare.wav")*
 * More complex handling of spaces, underscores, empty strings, special characters, etc.
 
