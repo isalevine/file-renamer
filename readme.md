@@ -32,21 +32,36 @@ Final confirmation (Y/n) will be requested for all multi-file rename commands.
 **NOTE: Spaces are not currently handled. Instead, make 1-by-1 changes to individual space-separated words.**
 
 ## Commands
+**Change Directory:**
 ```
 cd
 ```
+
+**List Files:**
 ```
 ls
 ```
+
+**Print Directory:**
 ```
 dir
 ```
+
+**Rename (single file, change entire filename):**
 ```
-rn
+rn <current_filename.ext> <new_filename.ext>
+
+$ rn Airhorn.wav AIRHOOOORN.wav
 ```
+
+**Rename All (multiple files, replace all string matches):**
 ```
-rn all
+rn all <string_input> <string_output>
+
+$ rn all Hihat HH
 ```
+
+**Exit Program:**
 ```
 q / quit
 ```
