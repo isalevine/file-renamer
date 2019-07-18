@@ -85,6 +85,9 @@ def print_menu():
             for filename in currentDirectory.iterdir():
                 print(filename)
 
+        if user_input == "h" or user_input == "help":
+            print_help_menu()
+
         # rn = rename ... anything better to use??
         if user_input[0:2] == "rn":
             array = user_input.split(" ")
@@ -186,7 +189,11 @@ def rename_partial_filename(filename, input, output):
 
 
 def print_help_menu():
-    print("Help menu:")
+    help_menu = """
+        Hi, and welcome to the help menu!
+    """
+
+    print(help_menu)
 
 
 print_menu()
