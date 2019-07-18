@@ -133,7 +133,6 @@ def print_menu():
                     # src = array[1]
                     # dst = array[2]
                     # os.rename(src, dst)
-            print("Rename detected!")
 
 
         # change the following to cd commands => call a separate
