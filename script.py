@@ -185,4 +185,8 @@ def rename_partial_filename(filename, input, output):
     return dst
 
 
+def print_help_menu():
+    print("Help menu:")
+
+
 print_menu()
