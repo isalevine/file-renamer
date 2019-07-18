@@ -68,6 +68,11 @@ $ rn all Hihat HH
 q / quit
 ```
 
+<!-- **Help Menu:**
+```
+h / help
+``` -->
+
 ## Notes
 **Upcoming plans:**
 * Add in a way to target single or multiple matches in filename *(i.e. only first "Snare" in "Snare 808 Filter Snare.wav")*
