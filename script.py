@@ -50,6 +50,20 @@ import pathlib
 import os
 
 
+# CONSIDER ADDING A MAIN MENU WITH SEVERAL OPTIONS:
+# 1. set default path
+# 2. toggle arrow function syntax for commands (rn all Snare => Snr)...anything different it can do?
+#       (...or just make it an optional way of entering commands...)
+#       alt: consider implementing "" to denote whitespace... (rn all "Snare " "Snr")
+# 3. toggle logging of filename changes => could this possibly lead to an undo function??
+# 4. help/instructions
+# 5. exit
+#
+# OTHER ADD-ONS:
+# - be able to select individual files and do more with them? (i.e. see/edit metadata?)
+# - have a slick CLI interface that can constantly show/update the directory's files? (toggle??)
+
+
 path = './drum-samples'
 
 # call once, then store in memory somewhere?
