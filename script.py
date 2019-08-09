@@ -49,7 +49,15 @@ import pathlib
 # per: https://stackoverflow.com/questions/54152653/renaming-file-extension-using-pathlib-python-3
 import os
 
+
 path = './drum-samples'
+
+# call once, then store in memory somewhere?
+def enterFilepath():
+    text = "Please enter your default path: (Empty will result in './')"
+    print(text)
+    user_input = get_user_input()
+    
 
 currentDirectory = pathlib.Path(path)
 
@@ -191,6 +199,8 @@ def rename_partial_filename(filename, input, output):
 def print_help_menu():
     help_menu = """
         Hi, and welcome to the help menu!
+
+        Commands:
     """
 
     print(help_menu)
