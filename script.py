@@ -55,6 +55,7 @@ import os
 # 2. toggle arrow function syntax for commands (rn all Snare => Snr)...anything different it can do?
 #       (...or just make it an optional way of entering commands...)
 #       alt: consider implementing "" to denote whitespace... (rn all "Snare " "Snr")
+#       or: arrow functions could encapsulate multiple changes? : ("Example 1", "Example 2") => ("ex1", "ex2")
 # 3. toggle logging of filename changes => could this possibly lead to an undo function??
 # 4. help/instructions
 # 5. exit
@@ -87,9 +88,7 @@ def print_menu():
     of drum sample filenames, specifically from
     Samples From Mars downloads.
 
-    ~~~
-
-    """
+    ~~~"""
     
     # print_current_directory()
     print(menu_text)
@@ -194,6 +193,7 @@ def print_current_directory():
 
 
 def get_user_input():
+    print("")
     return input("Enter command: ")
 
 
