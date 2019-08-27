@@ -75,6 +75,8 @@ h / help
 
 ## Notes
 **Upcoming plans:**
+* UNIT TESTS!! Need to find a way to create a dummy file to rename--refer to this StackOverflow article: [https://stackoverflow.com/questions/56760486/unit-testing-of-renaming-files-in-python](https://stackoverflow.com/questions/56760486/unit-testing-of-renaming-files-in-python) / [also, see this StackOverflow about mocking filesystems in Python](https://stackoverflow.com/questions/19672138/how-do-i-mock-the-filesystem-in-python-unit-tests)
+* CREATE LOGS!! Find a way to refactor the output of console-printed filename changes (store/update log once, then print the log)
 * Add in a way to target single or multiple matches in filename *(i.e. only first "Snare" in "Snare 808 Filter Snare.wav")*
 * More complex handling of spaces, underscores, empty strings, special characters, etc.
 
