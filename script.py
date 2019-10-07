@@ -162,8 +162,10 @@ def rename_whole_filename(filename1, filename2):
 
 
 def rename_partial_filename(filename, input, output):
+    # per: https://stackoverflow.com/a/3675423
     src = str(filename)
-    dst = src.replace(input, output)
+    head, sep, tail = src.rpartition(input)
+    dst = head + output + tail
     os.rename(src, dst)
     return dst
 
