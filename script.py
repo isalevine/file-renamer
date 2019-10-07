@@ -132,11 +132,11 @@ def print_menu():
             temp_directory = current_directory
         
             if user_input[3:5] == "..":
-                newPath = current_directory.parent
-                current_directory = pathlib.Path(newPath)
+                new_path = current_directory.parent
+                current_directory = pathlib.Path(new_path)
             else:
-                newPath = os.path.join(current_directory, user_input[3:])
-                current_directory = pathlib.Path(newPath)
+                new_path = os.path.join(current_directory, user_input[3:])
+                current_directory = pathlib.Path(new_path)
 
             print_current_directory()
 
