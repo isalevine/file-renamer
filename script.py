@@ -163,6 +163,11 @@ def rename_whole_filename(filename1, filename2):
 
 def rename_partial_filename(filename, input, output):
     # per: https://stackoverflow.com/a/3675423
+    #
+    # note: this does NOT solve issue of replacing strings in parent 
+    # directory names if no match is found in a given file...
+    # (i.e. try replacing SDS800 with \ inside any sample folder)
+    #
     src = str(filename)
     head, sep, tail = src.rpartition(input)
     dst = head + output + tail
