@@ -118,12 +118,10 @@ def print_menu():
                     continue
 
             else:  
-                # refactor as renaming_function(array[1], array[2]) 
-                if array[1] and array[2]:
+                if array[1] and array[2] and os.path.isfile(array[1]):
                     rename_whole_filename(array[1], array[2])
-                    # src = array[1]
-                    # dst = array[2]
-                    # os.rename(src, dst)
+                else:
+                    print("Rename aborted! (Probably because the original filename wasn't found.)")
 
 
         # change the following to cd commands => call a separate
