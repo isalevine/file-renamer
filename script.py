@@ -19,6 +19,8 @@ import pathlib
 # per: https://stackoverflow.com/questions/54152653/renaming-file-extension-using-pathlib-python-3
 import os
 
+import os.path
+
 
 # CONSIDER ADDING A MAIN MENU WITH SEVERAL OPTIONS:
 # 1. set default path
@@ -35,7 +37,8 @@ import os
 # - have a slick CLI interface that can constantly show/update the directory's files? (toggle??)
 
 
-path = './drum-samples'
+# path = './drum-samples'
+path = os.path.realpath('./drum-samples')
 
 # call once, then store in memory somewhere?
 def enterFilepath():
@@ -131,6 +134,8 @@ def print_menu():
 
         # change the following to cd commands => call a separate
         # cd() function that parses and changes currentDirectory?
+
+        # REFACTOR using os.path module!!!
         if user_input[0:2] == "cd":
             tempDirectory = currentDirectory
         
