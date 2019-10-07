@@ -94,7 +94,7 @@ def print_menu():
                     array[2] = ""
                 if array[3] == '\\':
                     # use this to count a number of possible blank spaces?
-                    array[3] = " "
+                    array[3] = ""
 
 
                 # MUST be a way to only iterate through current_directory once!!
