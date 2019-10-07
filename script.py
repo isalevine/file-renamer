@@ -1,4 +1,3 @@
-
 # IDEA for CLI TO NAVIGATE DIRECTORY:
 # -> recursively call an update_directory() function
 #    that will append/mutate based on user input, and
@@ -11,15 +10,6 @@
 #    and take the first "" and second "" as parameters
 #    for calling change_filenames(list, string1, string2)
 
-
-
-
-# per: https://stackabuse.com/python-list-files-in-a-directory/
-import pathlib
-# per: https://stackoverflow.com/questions/54152653/renaming-file-extension-using-pathlib-python-3
-import os
-
-import os.path
 
 
 # CONSIDER ADDING A MAIN MENU WITH SEVERAL OPTIONS:
@@ -37,18 +27,22 @@ import os.path
 # - have a slick CLI interface that can constantly show/update the directory's files? (toggle??)
 
 
-# path = './drum-samples'
-path = os.path.realpath('./drum-samples')
 
-# call once, then store in memory somewhere?
+# per: https://stackabuse.com/python-list-files-in-a-directory/
+import pathlib
+# per: https://stackoverflow.com/questions/54152653/renaming-file-extension-using-pathlib-python-3
+import os
+
+
+path = os.path.realpath('./drum-samples')   # set default path here
+currentDirectory = pathlib.Path(path)
+
+
+# call once, then store in memory somewhere? (currently not used!!)
 def enterFilepath():
     text = "Please enter your default path: (Empty will result in './')"
     print(text)
     user_input = get_user_input()
-    
-
-currentDirectory = pathlib.Path(path)
-
 
 
 def print_menu():
@@ -140,27 +134,23 @@ def print_menu():
             tempDirectory = currentDirectory
         
             if user_input[3:5] == "..":
-                array = str(currentDirectory).split('/')
-                print("Current array is: ")
-                # print(array)
-                del array[-1]
-                print(array)
-                currentDirectory = "".join(array)
-                print(currentDirectory)
-
+                newPath = currentDirectory.parent
+                currentDirectory = pathlib.Path(newPath)
             else:
-                currentDirectory = currentDirectory / user_input[3:]
-                print_current_directory()
+                newPath = os.path.join(currentDirectory, user_input[3:])
+                currentDirectory = pathlib.Path(newPath)
+
+            print_current_directory()
         
         # necessary to reset str() of path into a Posix.path object??
-        if type(currentDirectory) == str:
-            currentDirectory = pathlib.Path("./" + currentDirectory)
+        # SHOULD be obsolete w/ refactor to using pathlib module...
+        #
+        # if type(currentDirectory) == str:
+        #     currentDirectory = pathlib.Path("./" + currentDirectory)
 
         if not os.path.isdir(currentDirectory):
             print("Not a valid directory!")
             currentDirectory = tempDirectory
-        
-        # input("")
 
 
 def print_current_directory():
