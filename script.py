@@ -35,18 +35,18 @@ import os
 
 
 path = os.path.realpath('./drum-samples')   # set default path here
-currentDirectory = pathlib.Path(path)
+current_directory = pathlib.Path(path)
 
 
 # call once, then store in memory somewhere? (currently not used!!)
-def enterFilepath():
+def enter_filepath():
     text = "Please enter your default path: (Empty will result in './')"
     print(text)
     user_input = get_user_input()
 
 
 def print_menu():
-    global currentDirectory
+    global current_directory
 
     menu_text = """
     Hello, and welcome to Filename Reader!
@@ -70,7 +70,7 @@ def print_menu():
             print_current_directory()
 
         if user_input == "ls":
-            for filename in currentDirectory.iterdir():
+            for filename in current_directory.iterdir():
                 print(filename)
 
         if user_input == "h" or user_input == "help":   # currently empty - use Readme text!
@@ -97,11 +97,11 @@ def print_menu():
                     array[3] = " "
 
 
-                # MUST be a way to only iterate through currentDirectory once!!
+                # MUST be a way to only iterate through current_directory once!!
                 # => think about it then refactor...! (type: PosixPath)
                 print("You are going to replace: " + array[2] + " => " + array[3])
                 print("This will affect the following files: ")
-                for filename in currentDirectory.iterdir():
+                for filename in current_directory.iterdir():
                     if array[2] in str(filename):
                         print(filename)
                 print("Do you want to proceed? (Y/n)")
@@ -109,7 +109,7 @@ def print_menu():
 
                 if (final_check == "Y") or (final_check == "y") or (final_check == "Yes") or (final_check == "yes"):
                     print("Files changed:")
-                    for filename in currentDirectory.iterdir():
+                    for filename in current_directory.iterdir():
                         if array[2] in str(filename):
                             dst = rename_partial_filename(filename, array[2], array[3])
                             print(dst)
@@ -125,29 +125,29 @@ def print_menu():
 
 
         # change the following to cd commands => call a separate
-        # cd() function that parses and changes currentDirectory?
+        # cd() function that parses and changes current_directory?
 
         # REFACTOR using os.path module!!!
         if user_input[0:2] == "cd":
-            tempDirectory = currentDirectory
+            temp_directory = current_directory
         
             if user_input[3:5] == "..":
-                newPath = currentDirectory.parent
-                currentDirectory = pathlib.Path(newPath)
+                newPath = current_directory.parent
+                current_directory = pathlib.Path(newPath)
             else:
-                newPath = os.path.join(currentDirectory, user_input[3:])
-                currentDirectory = pathlib.Path(newPath)
-                
+                newPath = os.path.join(current_directory, user_input[3:])
+                current_directory = pathlib.Path(newPath)
+
             print_current_directory()
 
 
-        if not os.path.isdir(currentDirectory):
+        if not os.path.isdir(current_directory):
             print("Not a valid directory!")
-            currentDirectory = tempDirectory
+            current_directory = temp_directory
 
 
 def print_current_directory():
-    print("Current directory is: " + str(currentDirectory))
+    print("Current directory is: " + str(current_directory))
 
 
 def get_user_input():

@@ -1,7 +1,7 @@
 # File Renamer
 A Python CLI for renaming single and multiple files. Designed to format sample filenames for drum machines, but you can use it for whatever kind of files you want! :)
 
-**NOTE: Default directory is currently set to a _.gitignore_-ed folder of drum samples. Make sure to update this in order to avoid errors! _(As of 7-7-2019, see line 52.)_**
+**NOTE: Default directory is currently set to a _.gitignore_-ed folder of drum samples. Make sure to update this in order to avoid errors! _(As of 10-6-2019, see line 37.)_**
 
 
 ## Use
@@ -62,6 +62,8 @@ rn all <string_input> <string_output>
 
 $ rn all Hihat HH
 ```
+
+*Note: Currently, `rn all` will replace ALL matching instances of `<string_input>` encountered in the filename, NOT just the first match encountered.*
 
 **Exit Program:**
 ```
