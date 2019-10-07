@@ -3,6 +3,8 @@ A Python CLI for renaming single and multiple files. Designed to format sample f
 
 **NOTE: Default directory is currently set to a _.gitignore_-ed folder of drum samples. Make sure to update this in order to avoid errors! _(As of 10-6-2019, see line 37.)_**
 
+![gif of file-renamer in use on the command line](file-renamer-demo.gif)
+
 
 ## Use
 Open by running ```python3 script.py``` in the main directory.
