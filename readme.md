@@ -63,7 +63,7 @@ rn all <string_input> <string_output>
 $ rn all Hihat HH
 ```
 
-*Note: For `rn` and `rn all`, you can use a single backslash `\` for `<string_output>` to delete `<string_input>` without adding any characters.*
+*Note: Currently, using backslashes `\` to represent spaces in filenames is NOT working!*
 
 *Note: Currently, `rn all` will replace ALL matching instances of `<string_input>` encountered in the filename, NOT just the first match encountered.*
 
