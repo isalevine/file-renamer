@@ -73,7 +73,7 @@ def print_menu():
             for filename in currentDirectory.iterdir():
                 print(filename)
 
-        if user_input == "h" or user_input == "help":
+        if user_input == "h" or user_input == "help":   # currently empty - use Readme text!
             print_help_menu()
 
         # rn = rename ... anything better to use??
@@ -137,14 +137,9 @@ def print_menu():
             else:
                 newPath = os.path.join(currentDirectory, user_input[3:])
                 currentDirectory = pathlib.Path(newPath)
-
+                
             print_current_directory()
-        
-        # necessary to reset str() of path into a Posix.path object??
-        # SHOULD be obsolete w/ refactor to using pathlib module...
-        #
-        # if type(currentDirectory) == str:
-        #     currentDirectory = pathlib.Path("./" + currentDirectory)
+
 
         if not os.path.isdir(currentDirectory):
             print("Not a valid directory!")
