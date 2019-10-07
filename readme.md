@@ -46,7 +46,7 @@ ls
 
 **Print Directory:**
 ```
-dir
+pwd
 ```
 
 **Rename (single file, change entire filename):**
