@@ -1,5 +1,6 @@
-# don't track contents of these folders
+# don't track contents of these folders & files
 drum-samples/
+.DS_Store
 test-file.txt
 file-renamer-demo.mov
 file-renamer-demo.gif
