@@ -57,7 +57,7 @@ rn <current_filename.ext> <new_filename.ext>
 $ rn Airhorn.wav AIRHOOOORN.wav
 ```
 
-**Rename All (multiple files, replace all string matches):**
+**Rename All (multiple files, replace LAST string match found in each filename):**
 ```
 rn all <string_input> <string_output>
 
