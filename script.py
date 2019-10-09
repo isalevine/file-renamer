@@ -39,10 +39,10 @@ current_directory = pathlib.Path(path)
 
 
 # call once, then store in memory somewhere? (currently not used!!)
-def enter_filepath():
-    text = "Please enter your default path: (Empty will result in './')"
-    print(text)
-    user_input = get_user_input()
+# def enter_filepath():
+#     text = "Please enter your default path: (Empty will result in './')"
+#     print(text)
+#     user_input = get_user_input()
 
 
 def print_menu():
