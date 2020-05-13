@@ -30,23 +30,23 @@ def print_menu():
 
     # pwd = print working directory
     if user_input == "pwd":
-        print_current_directory()
+      print_current_directory()
 
     # ls = list
     if user_input == "ls":
-        for filename in current_directory.iterdir():
-            print(filename)
+      for filename in current_directory.iterdir():
+        print(filename)
 
     # h = help
     if user_input == "h" or user_input == "help":   # currently empty - use Readme text!
-        print_help_menu()
+      print_help_menu()
 
     # rn = rename
     if user_input[0:2] == "rn":
       array = user_input.split(" ")
 
       if array[1] == "\\all":
-          array[1] = "all"
+        array[1] = "all"
 
       if array[1] == "all":
         if (not array[2]) or (not array[3]):

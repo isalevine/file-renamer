@@ -7,6 +7,25 @@ A Python CLI for renaming single and multiple files. Designed to format sample f
 
 Read more about the project in [this article on Dev.to](https://dev.to/isalevine/need-to-rename-files-in-bulk-here-s-a-python-cli-called-file-renamer-2l8m)!
 
+## Highlights
+### 1. This is the first Python code I've ever written!
+The initial code to navigate the filesystem and rename individual files was written over a two-day period, which included learning Python from scratch.
+
+I was especially excited to dive into using the [`pathlib`](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L98) and [`os`](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L105) Python modules, as well as get hands-on learning with the basics of Python's [iterations](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L75), [variable scoping](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L12), and string-manipulation tools like [`rpartition`](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L133)!
+
+### 2. The functionality is designed specifically for [renaming audio sample files](https://github.com/isalevine/file-renamer/blob/master/file-renamer-demo.gif) for music producers.
+This is a small project as part of my passion for music production. I created this specifically to help rename large numbers of long, repetitive drum sample filenames. 
+
+I use it regularly to format filenames to display properly on my MPC 2500!
+
+### 3. Command-line controls mimic Unix console commands!
+[`ls`](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L36), [`cd`](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L93), and [`pwd`](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L32) are all used as commands to navigate the filesystem.
+
+The primary renaming functionality is [`rn`](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L45) and [`rn all`](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L51).
+
+There's also a WIP help menu that will be accessible via [`h` or `help`](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L41)!
+
+
 ## Use
 Open by running ```python3 script.py``` in the main directory.
 
