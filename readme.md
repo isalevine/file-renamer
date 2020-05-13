@@ -1,9 +1,11 @@
 # File Renamer
 A Python CLI for renaming single and multiple files. Designed to format sample filenames for drum machines, but you can use it for whatever kind of files you want! :)
 
+![gif of file-renamer in action, showing file names as they change](file-renamer-demo.gif)
+
 **NOTE: Default directory is currently set to a _.gitignore_-ed folder of drum samples. Make sure to update this in order to avoid errors! _(As of 10-6-2019, see line 37.)_**
 
-Read more about the project (and see a demo gif) in [this article on Dev.to](https://dev.to/isalevine/need-to-rename-files-in-bulk-here-s-a-python-cli-called-file-renamer-2l8m)!
+Read more about the project in [this article on Dev.to](https://dev.to/isalevine/need-to-rename-files-in-bulk-here-s-a-python-cli-called-file-renamer-2l8m)!
 
 ## Use
 Open by running ```python3 script.py``` in the main directory.
