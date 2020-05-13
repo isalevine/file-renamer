@@ -26,11 +26,14 @@ The primary renaming functionality is [`rn`](https://github.com/isalevine/file-r
 There's also a WIP help menu that will be accessible via [`h` or `help`](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L41)!
 
 
+## Requirements
+* Python3 version 3.7.5 or higher
+
+
 ## Setup
 1. Clone this repo.
 1. [Update the default directory.](https://github.com/isalevine/file-renamer/blob/0e9e2783b0e967433e40820c6fbe7f7d7759c571/script.py#L7) This is where the CLI will start in your filesystem. I recommend setting it to a common audio sample directory.
 1. Open by running `python3 script.py` in the main directory.
-
 
 
 ## Use
