@@ -3,7 +3,7 @@ A Python CLI for renaming single and multiple files. Designed to format sample f
 
 ![gif of file-renamer in action, showing file names as they change](file-renamer-demo.gif)
 
-**NOTE: Default directory is currently set to a _.gitignore_-ed folder of drum samples. Make sure to update this in order to avoid errors! _(As of 10-6-2019, see line 37.)_**
+**NOTE: Default directory is currently set to a _.gitignore_-ed folder of drum samples. [Make sure to update this in order to avoid errors!](https://github.com/isalevine/file-renamer/blob/0e9e2783b0e967433e40820c6fbe7f7d7759c571/script.py#L7)**
 
 Read more about the project in [this article on Dev.to](https://dev.to/isalevine/need-to-rename-files-in-bulk-here-s-a-python-cli-called-file-renamer-2l8m)!
 
@@ -26,10 +26,17 @@ The primary renaming functionality is [`rn`](https://github.com/isalevine/file-r
 There's also a WIP help menu that will be accessible via [`h` or `help`](https://github.com/isalevine/file-renamer/blob/c361c8ad9fa424dbda5554f6adb78d134261c16f/script.py#L41)!
 
 
-## Use
-Open by running ```python3 script.py``` in the main directory.
+## Setup
+1. Clone this repo.
+1. [Update the default directory.](https://github.com/isalevine/file-renamer/blob/0e9e2783b0e967433e40820c6fbe7f7d7759c571/script.py#L7) This is where the CLI will start in your filesystem. I recommend setting it to a common audio sample directory.
+1. Open by running `python3 script.py` in the main directory.
 
-Use ```cd``` commands to navigate to the files you want to rename. File Renamer can target individual files, or can do (currently) basic string matching to change multiple filenames in the same directory.
+
+
+## Use
+Open by running `python3 script.py` in the main directory.
+
+Use `cd` commands to navigate to the files you want to rename. File Renamer can target individual files, or can do (currently) basic string matching to change multiple filenames in the same directory.
 
 **Example:**
 
